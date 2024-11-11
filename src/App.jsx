@@ -1,11 +1,9 @@
 import React from 'react'
-import Home from './Home/Home'
+import Router from './Router/Router'
 
 function App() {
 	return (
-		<>
-			<Home />
-		</>
+		<Router />
 	)
 }
 
