@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from '../Pages/Home/Home'
-import User from '../Pages/User/User'
-import NoPage from '../Pages/NoPage/NoPage'
+import Home from '../views/Home/Home'
+import User from '../views/User/User'
+import NoPage from '../views/NoPage/NoPage'
 
 
 function Router() {
