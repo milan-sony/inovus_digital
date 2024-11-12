@@ -1,15 +1,17 @@
 import React from 'react'
 import './NoPage.css'
 import { Link } from 'react-router-dom'
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 
 function NoPage() {
     return (
         <>
-        <Helmet>
-            <title>Page Not Found</title>
-        </Helmet>
+        <HelmetProvider>
+                <Helmet>
+                    <title>No page found</title>
+                </Helmet>
+            </HelmetProvider>
         <div className='page-container'>
             <div className='h-screen flex flex-col justify-center items-center'>
                 <h1 className='text-9xl text-white font-Open-Sans font-black pb-3'>404</h1>

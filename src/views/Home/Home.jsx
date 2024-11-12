@@ -1,14 +1,16 @@
 import React from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom'
-import { Helmet } from "react-helmet"
+import { Helmet, HelmetProvider } from 'react-helmet-async' // https://stackoverflow.com/questions/62202890/how-can-i-fix-using-unsafe-componentwillmount-in-strict-mode-is-not-recommended
 
 function Home() {
     return (
         <>
-            <Helmet>
-                <title>Inovus Digital - Inovus Labs IEDC</title>
-            </Helmet>
+            <HelmetProvider>
+                <Helmet>
+                    <title>Inovus Digital - Inovus Labs IEDC</title>
+                </Helmet>
+            </HelmetProvider>
             <div className='background'>
                 <div className='h-screen flex flex-col justify-center items-center'>
                     <h1 className='text-4xl sm:text-6xl md:text-8xl font-bold capitalize font-Open-Sans text-center text-white pb-5'>Inovus Digital</h1>
