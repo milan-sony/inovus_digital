@@ -1,0 +1,46 @@
+.submit-btn {
+    padding: 6px 40px;
+    outline: none;
+    border: none;
+    border: 1px solid #0D92F4;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    transition-duration: 0.4s ease;
+    background: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.submit-btn:hover {
+    outline: none;
+    border: 1px solid #0D92F4;
+    color: white;
+    background-color: #0D92F4;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    padding: 6px 40px;
+    outline: none;
+    border: 1px solid #0D92F4;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    transition-duration: 0.4s ease;
+    background: none;
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.cancel-btn:hover {
+    outline: none;
+    border: 1px solid #0D92F4;
+    color: white;
+    background-color: #0D92F4;
+    cursor: pointer;
+}
