@@ -1,8 +1,10 @@
 import React from 'react'
 import './Home.css'
 import { Link } from 'react-router-dom'
+import TitleChanger from '../../hooks/TitleChanger'
 
 function Home() {
+    TitleChanger('Home - Inovus Digital')
     return (
         <div className='background'>
             <div className='h-screen flex flex-col justify-center items-center'>

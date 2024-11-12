@@ -1,7 +1,10 @@
 import React from 'react'
 import './User.css'
+// Title changer
+import TitleChanger from '../../hooks/TitleChanger'
 
 function User() {
+    TitleChanger('Submit - Inovus Digital')
     return (
         <div className="min-h-screen bg-custblue">
             <div className="py-10">
