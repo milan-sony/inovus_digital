@@ -11,9 +11,22 @@ function User() {
         role: ""
     })
 
+    const [initials, setInitials] = useState('...')
+
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
         console.log("Input values: ", e.target.value)
+    }
+
+    const extractInitials = () => {
+        const uNames = formData.name.split(' ')
+
+        if (uNames.length > 0) {
+            const firstLetter = uNames[0].charAt(0).toLocaleUpperCase()
+            const lastLetter = uNames[uNames.length - 1].charAt(0).toLocaleUpperCase()
+            setInitials(firstLetter + lastLetter)
+
+        }
     }
 
     const handleSubmit = (e) => {
@@ -39,15 +52,17 @@ function User() {
             <div className="min-h-screen bg-custblue">
                 <div className="py-10">
                     <form className="max-w-sm mx-auto p-10 bg-black rounded-xl" onSubmit={handleSubmit}>
-                        <div className="flex justify-center">
-                            <img className="w-20 h-20 p-1 rounded-full ring-2 ring-custblue" src="" alt="Avatar" />
+                        <div className='flex justify-center pb-2'>
+                            <div className="w-20 h-20 rounded-full ring-2 ring-white bg-custblue flex justify-center  items-center text-center">
+                                <p className='text-3xl text-white font-black'>{initials}</p>
+                            </div>
                         </div>
 
                         <div>
                             <p className="mb-2 text-base font-semibold text-white font-Open-Sans">Name</p>
                             <input type="text" name="name"
                                 className="w-full p-2 text-white font-Open-Sans rounded-xl bg-custblue text-sm font-semibold focus:outline-none focus:ring focus:ring-white"
-                                autoComplete="off" required value={formData.name} onChange={handleChange} />
+                                autoComplete="off" required value={formData.name} onChange={handleChange} onBlur={extractInitials} />
                         </div>
 
                         <div className="mt-5">
