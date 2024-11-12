@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './User.css'
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 function User() {
     const [formData, setFormData] = useState({
@@ -11,13 +11,21 @@ function User() {
         role: ""
     })
 
-    const handleChange = (e) =>{
-        setFormData({...formData, [e.target.name]: e.target.value})
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
         console.log("Input values: ", e.target.value)
     }
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = (e) => {
         e.preventDefault()
+
+        // Check for empty fields
+        const { name, email, purpose, program, role } = formData // destructuring
+        if (!name || !email || !purpose || !program || !role) {
+            alert("Please fill in all fields.")
+            return
+        }
+
         console.log("Form Data", formData)
     }
 
@@ -30,34 +38,33 @@ function User() {
             </HelmetProvider>
             <div className="min-h-screen bg-custblue">
                 <div className="py-10">
-                    <form className="max-w-sm mx-auto p-10 bg-black rounded-xl">
-
+                    <form className="max-w-sm mx-auto p-10 bg-black rounded-xl" onSubmit={handleSubmit}>
                         <div className="flex justify-center">
-                            <img className="w-20 h-20 p-1 rounded-full ring-2 ring-custblue" src=""
-                                alt="Avatar" />
+                            <img className="w-20 h-20 p-1 rounded-full ring-2 ring-custblue" src="" alt="Avatar" />
                         </div>
 
                         <div>
                             <p className="mb-2 text-base font-semibold text-white font-Open-Sans">Name</p>
                             <input type="text" name="name"
                                 className="w-full p-2 text-white font-Open-Sans rounded-xl bg-custblue text-sm font-semibold focus:outline-none focus:ring focus:ring-white"
-                                autoComplete="off" required value={formData.name} />
+                                autoComplete="off" required value={formData.name} onChange={handleChange} />
                         </div>
 
                         <div className="mt-5">
-                            <p className="mb-2 text-base font-semibold text-white font-Open-Sans">Email</p>
+                            <p className="mb-2 text-base fo font-semibold text-white font-Open-Sans">Email</p>
                             <input type="text" name="email"
                                 className="w-full p-2 text-white font-Open-Sans rounded-xl bg-custblue text-sm font-semibold focus:outline-none focus:ring focus:ring-white"
-                                autoComplete="off" required value={formData.email} />
+                                autoComplete="off" required value={formData.email} onChange={handleChange} />
                         </div>
 
                         <div className="mt-5">
-                            <p for="role" className="mb-2 text-base font-semibold text-white font-Open-Sans">Purpose of your visit</p>
+                            <p className="mb-2 text-base font-semibold text-white font-Open-Sans">Purpose of your visit</p>
                             <select name="purpose"
                                 className="text-white font-Open-Sans text-sm font-semibold rounded-xl w-full p-2 bg-custblue focus:outline-none focus:ring focus:ring-white"
-                                required value={formData.purpose}>
+                                required value={formData.purpose} onChange={handleChange}>
+                                <option value="">Select...</option>
                                 <option>Self learn</option>
-                                <option>Buname a project</option>
+                                <option>Build a project</option>
                                 <option>Explore</option>
                             </select>
                         </div>
@@ -67,26 +74,27 @@ function User() {
                             <p className="mb-2 text-sm font-extralight text-white font-Open-Sans">What's keeping you busy today</p>
                             <input type="text" name="program"
                                 className="w-full p-2 text-white font-Open-Sans rounded-xl bg-custblue text-sm font-semibold focus:outline-none focus:ring focus:ring-white"
-                                autoComplete="off" required value={formData.program} />
+                                autoComplete="off" required value={formData.program} onChange={handleChange} />
                         </div>
 
                         <div className="mt-5">
-                            <p for="role" className="mb-2 text-base font-semibold text-white font-Open-Sans">Role</p>
+                            <p className="mb-2 text-base font-semibold text-white font-Open-Sans">Role</p>
                             <select name="role"
                                 className="text-white font-Open-Sans text-sm font-semibold rounded-xl w-full p-2 bg-custblue focus:outline-none focus:ring focus:ring-white"
-                                required value={formData.role}>
+                                required value={formData.role} onChange={handleChange}>
+                                <option value="">Select...</option>
                                 <option>Mentee</option>
                                 <option>Mentor</option>
                             </select>
                         </div>
 
                         <div className="mt-5 flex justify-evenly max-lg:flex-wrap">
-                            <button className="cancel-btn font-Open-Sans font-semibold text-base max-lg:mb-5">Cancel</button>
+                            <button type="button" className="cancel-btn font-Open-Sans font-semibold text-base max-lg:mb-5">Cancel</button>
                             <button type="submit"
-                                className="submit-btn font-Open-Sans font-semibold text-base max-lg:mb-5" onClick={handleSubmit}>Submit</button>
+                                className="submit-btn font-Open-Sans font-semibold text-base max-lg:mb-5">Submit</button>
                         </div>
                     </form>
-                </div >
+                </div>
             </div>
         </>
     )
