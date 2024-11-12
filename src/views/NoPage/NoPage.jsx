@@ -1,9 +1,15 @@
 import React from 'react'
 import './NoPage.css'
 import { Link } from 'react-router-dom'
+import { Helmet } from "react-helmet";
+
 
 function NoPage() {
     return (
+        <>
+        <Helmet>
+            <title>Page Not Found</title>
+        </Helmet>
         <div className='page-container'>
             <div className='h-screen flex flex-col justify-center items-center'>
                 <h1 className='text-9xl text-white font-Open-Sans font-black pb-3'>404</h1>
@@ -11,6 +17,7 @@ function NoPage() {
                 <Link to={"/"} className='text-white text-5xl font-black'><i class="fa-solid fa-left-long"></i></Link>
             </div>
         </div>
+        </>
     )
 }
 
