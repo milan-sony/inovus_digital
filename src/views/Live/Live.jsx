@@ -1,10 +1,14 @@
 import React from 'react'
+import './Live.css'
+import Navbar from '../../components/Navbar/Navbar'
 
 function Live() {
     return (
-        <div>
-            <h1>live</h1>
+        <>
+        <div className='h-screen dynamic-bg'>
+            <Navbar />
         </div>
+        </>
     )
 }
 
