@@ -9,7 +9,7 @@ function NoPage() {
         <>
         <HelmetProvider>
                 <Helmet>
-                    <title>No page found</title>
+                    <title>Page not found</title>
                 </Helmet>
             </HelmetProvider>
         <div className='page-container'>
