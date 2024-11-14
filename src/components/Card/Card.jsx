@@ -30,7 +30,7 @@ function Card() {
                                 </div>
                             </div>
                             {/* <p className='text-custblue text-sm font-Open-Sans font-bold text-center pb-3'>milan milan milan milan 25</p> */}
-                            <marquee behavior="scroll" direction="left"><p className='text-custblue text-sm font-Open-Sans font-bold text-center pb-3'>milan milan milan milan 25</p>
+                            <marquee behavior="scroll" direction="left"><p className='text-custblue text-sm font-Open-Sans font-bold text-center pb-3 capitalize'>milan milan milan milan 25</p>
                             </marquee>
                             <hr className='mb-3' />
                             <p className='text-white text-sm font-Open-Sans font-medium text-center pb-1'>Build a project</p>
@@ -45,7 +45,7 @@ function Card() {
                                     <p className='text-2xl text-white font-black'>MS</p>
                                 </div>
                             </div>
-                            <p className='text-custblue text-sm font-Open-Sans font-bold text-center pb-3'>Milan2</p>
+                            <p className='text-custblue text-sm font-Open-Sans font-bold text-center pb-3 capitalize'>Milan2</p>
                             <hr className='mb-3' />
                             <p className='text-white text-sm font-Open-Sans font-medium text-center pb-1'>Build a project</p>
                             <marquee behavior="scroll" direction="left"><p className='text-white text-sm font-Open-Sans font-medium'>Sample project</p></marquee>
