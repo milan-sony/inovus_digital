@@ -13,6 +13,7 @@ import 'swiper/css/autoplay'
 function Card() {
     return (
         <>
+        {/* Mentors */}
             <div className='mx-10'>
                 <div>
                     <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentor's</h1>
@@ -20,7 +21,7 @@ function Card() {
                 <Swiper
                     // install Swiper modules
                     modules={[Autoplay]}
-                    slidesPerView={8}
+                    slidesPerView={1}
                     spaceBetween={40}
                     autoplay={true}
 
@@ -67,7 +68,6 @@ function Card() {
                         }
                     }}
                 >
-
                     <SwiperSlide>
                         <div className='px-3 py-3 w-[150px] h-[180px] card-bg rounded-lg'>
                             <div className='flex justify-center items-center'>
@@ -85,6 +85,8 @@ function Card() {
                     </SwiperSlide>
                 </Swiper>
             </div>
+
+            {/* Mentees */}
             <div className='mx-10'>
                 <div>
                     <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentee's</h1>
@@ -92,7 +94,7 @@ function Card() {
                 <Swiper
                     // install Swiper modules
                     modules={[Autoplay]}
-                    slidesPerView={8}
+                    slidesPerView={1}
                     spaceBetween={40}
                     autoplay={true}
 
@@ -157,6 +159,8 @@ function Card() {
                     </SwiperSlide>
                 </Swiper>
             </div>
+
+            {/* Ecplorers */}
             <div className='mx-10'>
                 <div>
                     <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Explorer's</h1>
@@ -164,7 +168,7 @@ function Card() {
                 <Swiper
                     // install Swiper modules
                     modules={[Autoplay]}
-                    slidesPerView={8}
+                    slidesPerView={1}
                     spaceBetween={40}
                     autoplay={true}
 
