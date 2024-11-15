@@ -15,7 +15,7 @@ function Card() {
         <>
             <div className='mx-10'>
                 <div>
-                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentor</h1>
+                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentor's</h1>
                 </div>
                 <Swiper
                     // install Swiper modules
@@ -87,7 +87,7 @@ function Card() {
             </div>
             <div className='mx-10'>
                 <div>
-                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentor</h1>
+                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentee's</h1>
                 </div>
                 <Swiper
                     // install Swiper modules
@@ -159,7 +159,7 @@ function Card() {
             </div>
             <div className='mx-10'>
                 <div>
-                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentor</h1>
+                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Explorer's</h1>
                 </div>
                 <Swiper
                     // install Swiper modules
