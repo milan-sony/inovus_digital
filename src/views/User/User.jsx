@@ -19,13 +19,23 @@ function User() {
     }
 
     const extractInitials = () => {
-        const uNames = formData.name.split(' ')
+        const uNames = formData.name.split(' ');
 
         if (uNames.length > 0) {
-            const firstLetter = uNames[0].charAt(0).toLocaleUpperCase()
-            const lastLetter = uNames[uNames.length - 1].charAt(0).toLocaleUpperCase()
-            setInitials(firstLetter + lastLetter)
+            let initials;
 
+            if (uNames.length === 1) {
+                // For a single name, take the first two characters as initials
+                const firstTwoChars = uNames[0].slice(0, 2).toUpperCase();
+                initials = firstTwoChars;
+            } else {
+                // For multiple names, take the first letter of the first and last names
+                const firstLetter = uNames[0].charAt(0).toUpperCase();
+                const lastLetter = uNames[uNames.length - 1].charAt(0).toUpperCase();
+                initials = firstLetter + lastLetter;
+            }
+
+            setInitials(initials);
         }
     }
 
