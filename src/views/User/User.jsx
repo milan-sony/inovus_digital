@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './User.css'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
+import axios from 'axios'
 
 function User() {
     const [formData, setFormData] = useState({
@@ -39,9 +40,8 @@ function User() {
         }
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
+    async function handleSubmit(evnt) {
+        evnt.preventDefault()
         // Check for empty fields
         const { name, email, purpose, program, role } = formData // destructuring
         if (!name || !email || !purpose || !program || !role) {
@@ -49,7 +49,11 @@ function User() {
             return
         }
 
-        console.log("Form Data", formData)
+        await axios.post(`http://localhost:3000/api/v1/users`, formData).then((response)=>{
+            const userData = response.data
+            console.log('Data: ', userData)
+        }).catch(console.error())
+
     }
 
     return (
