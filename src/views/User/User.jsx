@@ -49,7 +49,7 @@ function User() {
             return
         }
 
-        await axios.post(`http://localhost:3000/api/v1/users`, formData).then((response)=>{
+        await axios.post(import.meta.env.VITE_APP_API_URL + `users`, formData).then((response)=>{
             const userData = response.data
             console.log('Data: ', userData)
         }).catch(console.error())
