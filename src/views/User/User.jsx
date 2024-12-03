@@ -51,7 +51,8 @@ function User() {
 
         await axios.post(import.meta.env.VITE_APP_API_URL + `users`, formData).then((response)=>{
             const userData = response.data
-            console.log('Data: ', userData)
+            window.location.href = 'live';
+
         }).catch(console.error())
 
     }
