@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './User.css'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 function User() {
     const [formData, setFormData] = useState({
@@ -118,7 +119,7 @@ function User() {
                         </div>
 
                         <div className="mt-5 flex justify-evenly max-lg:flex-wrap">
-                            <button type="button" className="cancel-btn font-Open-Sans font-semibold text-base max-lg:mb-5">Cancel</button>
+                            <Link to={'/'} className="cancel-btn font-Open-Sans font-semibold text-base max-lg:mb-5">Cancel</Link>
                             <button type="submit"
                                 className="submit-btn font-Open-Sans font-semibold text-base max-lg:mb-5">Submit</button>
                         </div>
