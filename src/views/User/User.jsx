@@ -16,7 +16,6 @@ function User() {
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
-        console.log("Input values: ", e.target.value)
     }
 
     const extractInitials = () => {
@@ -45,7 +44,7 @@ function User() {
         // Check for empty fields
         const { name, email, purpose, program, role } = formData // destructuring
         if (!name || !email || !purpose || !program || !role) {
-            alert("Please fill in all fields.")
+            alert("Please fill in all fields")
             return
         }
 
