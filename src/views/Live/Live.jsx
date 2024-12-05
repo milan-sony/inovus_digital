@@ -5,28 +5,55 @@ import Card from '../../components/Card/Card';
 import axios from 'axios';
 
 function Live() {
+
     useEffect(() => {
         getProfiles();
     }, []);
 
-    const [data, setData] = useState();
+    const [mentors, setMentors] = useState([])
+    const [mentees, setMentees] = useState([])
+    const [explorers, setExplorers] = useState([])
 
     const getProfiles = async () => {
         try {
             const response = await axios.get(import.meta.env.VITE_APP_API_URL + `users`);
-            setData(response.data);
-            console.log(response.data);
-            console.log('hi');
+            const usersData = response.data.message
+            setMentors(usersData.filter(person => person.role.toLowerCase() === 'mentor'))
+            setMentees(usersData.filter(person => person.role.toLowerCase() === 'mentee'))
+            setExplorers(usersData.filter(person => person.role.toLowerCase() === 'explorer'))
         } catch (error) {
             console.error(error);
         }
     };
 
+
     return (
         <>
             <div className='h-screen dynamic-bg'>
                 <Navbar />
-                <Card />
+                {
+                    mentors.map((mentor, index) => {
+                        return (
+                            <Card key={index} uName={mentor.name} uRole={mentor.role} />
+                        )
+                    })
+                }
+
+                {
+                    mentees.map((mentee, index) => {
+                        return (
+                            <Card key={index} uName={mentee.name} uRole={mentee.role}/>
+                        )
+                    })
+                }
+
+                {
+                    explorers.map((explorer, index) => {
+                        return (
+                            <Card key={index} uName={explorer.name} uRole={explorer.role}/>
+                        )
+                    })
+                }
             </div>
         </>
     );
