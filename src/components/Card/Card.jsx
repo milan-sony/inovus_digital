@@ -22,13 +22,28 @@ function Card() {
     const [mentees, setMentees] = useState([])
     const [explorers, setExplorers] = useState([])
 
+    const [mentorsCount, setMentorsCount] = useState(0)
+    const [menteessCount, setMenteesCount] = useState(0)
+    const [explorersCount, setExplorersCount] = useState(0)
+
     const getProfiles = async () => {
         try {
             const response = await axios.get(import.meta.env.VITE_APP_API_URL + `users`);
             const usersData = response.data.message
-            setMentors(usersData.filter(person => person.role.toLowerCase() === 'mentor'))
-            setMentees(usersData.filter(person => person.role.toLowerCase() === 'mentee'))
-            setExplorers(usersData.filter(person => person.role.toLowerCase() === 'explorer'))
+
+            const filteredMentors = usersData.filter(person => person.role.toLowerCase() === 'mentor')
+            const filteredMentees = usersData.filter(person => person.role.toLowerCase() === 'mentee')
+            const filteredExplorers = usersData.filter(person => person.role.toLowerCase() === 'explorer')
+
+            setMentors(filteredMentors)
+            setMentees(filteredMentees)
+            setExplorers(filteredExplorers)
+
+            setMentorsCount(filteredMentors.length)
+            setMenteesCount(filteredMentees.length)
+            setExplorersCount(filteredExplorers.length)
+
+
         } catch (error) {
             console.error(error);
         }
@@ -39,7 +54,7 @@ function Card() {
             {/* Mentors */}
             <div className='mx-10'>
                 <div>
-                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentor's</h1>
+                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>{mentorsCount}</span>&nbsp;Mentor's</h1>
                 </div>
                 <Swiper
                     // install Swiper modules
@@ -119,7 +134,7 @@ function Card() {
             {/* Mentees */}
             <div className='mx-10'>
                 <div>
-                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Mentee's</h1>
+                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>{menteessCount}</span>&nbsp;Mentee's</h1>
                 </div>
                 <Swiper
                     // install Swiper modules
@@ -201,7 +216,7 @@ function Card() {
             {/* Ecplorers */}
             <div className='mx-10'>
                 <div>
-                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>5</span>&nbsp;Explorer's</h1>
+                    <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>{explorersCount}</span>&nbsp;Explorer's</h1>
                 </div>
                 <Swiper
                     // install Swiper modules
