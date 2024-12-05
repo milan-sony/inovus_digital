@@ -69,7 +69,7 @@ function User() {
                     <form className="max-w-sm mx-auto p-10 bg-black rounded-xl" onSubmit={handleSubmit}>
                         <div className='flex justify-center pb-2'>
                             <div className="w-20 h-20 rounded-full ring-2 ring-white bg-custblue flex justify-center  items-center text-center">
-                                <p className='text-3xl text-white font-black'>{initials}</p>
+                                <p className='text-3xl text-white font-black uppercase'>{initials}</p>
                             </div>
                         </div>
 
