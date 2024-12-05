@@ -31,29 +31,7 @@ function Live() {
         <>
             <div className='h-screen dynamic-bg'>
                 <Navbar />
-                {
-                    mentors.map((mentor, index) => {
-                        return (
-                            <Card key={index} uName={mentor.name} uRole={mentor.role} />
-                        )
-                    })
-                }
-
-                {
-                    mentees.map((mentee, index) => {
-                        return (
-                            <Card key={index} uName={mentee.name} uRole={mentee.role}/>
-                        )
-                    })
-                }
-
-                {
-                    explorers.map((explorer, index) => {
-                        return (
-                            <Card key={index} uName={explorer.name} uRole={explorer.role}/>
-                        )
-                    })
-                }
+                <Card />
             </div>
         </>
     );
