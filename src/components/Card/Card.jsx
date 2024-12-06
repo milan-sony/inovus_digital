@@ -51,7 +51,7 @@ function Card() {
     // Function to get initials from a name
     const getInitials = (name) => {
         const names = name.split(' ');
-        const initials = names.map(n => n.charAt(0)).join('').toLowerCase();
+        const initials = names.map(n => n.charAt(0)).join('').toUpperCase();
         return initials;
     };
 
