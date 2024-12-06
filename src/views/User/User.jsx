@@ -121,8 +121,9 @@ function User() {
                                 className="text-white font-Open-Sans text-sm font-semibold rounded-xl w-full p-2 bg-custblue focus:outline-none focus:ring focus:ring-white"
                                 required value={formData.role} onChange={handleChange}>
                                 <option value="">Select...</option>
-                                <option>Mentee</option>
                                 <option>Mentor</option>
+                                <option>Mentee</option>
+                                <option>Explorer</option>
                             </select>
                         </div>
 

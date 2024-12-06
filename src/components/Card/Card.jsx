@@ -18,6 +18,12 @@ function Card() {
         getProfiles();
     }, []);
 
+    useEffect(()=>{
+        const interval = setInterval(()=>{
+            getProfiles();
+        }, 60000)
+    })
+
     const [mentors, setMentors] = useState([]);
     const [mentees, setMentees] = useState([]);
     const [explorers, setExplorers] = useState([]);
