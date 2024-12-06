@@ -69,7 +69,7 @@ function User() {
                     <form className="max-w-sm mx-auto p-10 bg-black rounded-xl" onSubmit={handleSubmit}>
                         <div className='flex justify-center pb-2'>
                             <div className="w-20 h-20 rounded-full ring-2 ring-white bg-custblue flex justify-center  items-center text-center">
-                                <p className='text-3xl text-white font-black uppercase'>{initials}</p>
+                                <p className='text-3xl text-white font-black uppercase font-Open-Sans'>{initials}</p>
                             </div>
                         </div>
 
@@ -99,10 +99,18 @@ function User() {
                             </select>
                         </div>
 
-                        <>
+                        <div className="mt-5">
+                            <p className="text-base font-semibold text-white font-Open-Sans">Program/Domain</p>
+                            <p className="mb-2 text-sm font-extralight text-white font-Open-Sans">What's keeping you busy today</p>
+                            <input type="text" name="program"
+                                className="w-full p-2 text-white font-Open-Sans rounded-xl bg-custblue text-sm font-semibold focus:outline-none focus:ring focus:ring-white"
+                                autoComplete="off" required value={formData.program} onChange={handleChange} />
+                        </div>
+
+                        {/* <>
                             {
                                 formData.purpose === 'Explore' ? (
-                                    <> </>
+                                    <>  </>
                                 ) : (
                                     <div className="mt-5">
                                         <p className="text-base font-semibold text-white font-Open-Sans">Program/Domain</p>
@@ -113,7 +121,7 @@ function User() {
                                     </div>
                                 )
                             }
-                        </>
+                        </> */}
 
                         <div className="mt-5">
                             <p className="mb-2 text-base font-semibold text-white font-Open-Sans">Role</p>
