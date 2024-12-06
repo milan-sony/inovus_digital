@@ -18,11 +18,16 @@ function Card() {
         getProfiles();
     }, []);
 
-    useEffect(()=>{
-        const interval = setInterval(()=>{
-            getProfiles();
-        }, 60000)
-    })
+    // const [sync, setSync] = React.useState(false)
+
+    // useEffect(() => {
+    //     getProfiles()
+    //     const interval = setInterval(() => {
+    //         getProfiles();
+    //     }, 60000)
+    //     return () => clearInterval(interval)
+    // }, [])
+
 
     const [mentors, setMentors] = useState([]);
     const [mentees, setMentees] = useState([]);
@@ -65,6 +70,9 @@ function Card() {
         <>
             {/* Mentors */}
             <div className='mx-10'>
+                {/* {
+                    sync ? <p className='float-right text-sm text-white font-Open-Sans'>sync</p> : null
+                } */}
                 <div>
                     <h1 className='text-white text-lg sm:text-2xl font-Open-Sans font-black capitalize my-1'><span className='num-round'>{mentorsCount}</span>&nbsp;Mentor's</h1>
                 </div>
@@ -93,7 +101,7 @@ function Card() {
                                     <div className='px-3 py-3 w-[150px] h-[180px] card-bg rounded-lg'>
                                         <div className='flex justify-center items-center'>
                                             <div className="w-16 h-16 rounded-full ring-2 ring-white bg-custblue flex justify-center items-center text-center mb-2">
-                                                <p className='text-2xl text-white font-black uppercase'>{getInitials(mentor.name)}</p>
+                                                <p className='text-2xl text-white font-black uppercase font-Open-Sans'>{getInitials(mentor.name)}</p>
                                             </div>
                                         </div>
                                         <marquee behavior="scroll" direction="left"><p className='text-custblue text-sm font-Open-Sans font-bold text-center mb-1 capitalize'>{mentor.name}</p></marquee>
